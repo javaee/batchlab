@@ -1,0 +1,19 @@
+= Introduction to the Batch API (JSR 352)
+David Delabassee <https://twitter.com/delabassee[@delabassee]>
+v1.0, Aug 27, 2014
+:doctype: book
+:toc:
+:toc-placement: preamble
+:toclevels: 2
+:icons: font 
+
+image::cover.jpg[]
+
+:numbered!:
+include::chapters/introduction.adoc[]
+:numbered:
+include::chapters/exercice1.adoc[]
+include::chapters/exercice2.adoc[]
+include::chapters/exercice3.adoc[]
+include::chapters/exercice4.adoc[]
+include::chapters/exercice5.adoc[]

@@ -1,0 +1,48 @@
+Objective:
+
+	To Learn:
+		
+		Structure of a Batch Job
+			ItemReader, ItemProcessor, ItemWriter
+			Job XML
+				Steps
+				Specifying the Item{Reader, Processor, Writer} for a Step.
+				
+		Packaging requirements
+			Placing Job XMl under META-INF/batch-jobs
+			Multiple Job xmls can be placed under this directory.
+					
+		Using JobOperator APIs
+			How to submit a Batch Job
+			Using JobOperator APIs to query Job status
+			
+		Difference between executionId and instanceId
+		
+		
+About the application used in lab1
+
+	Mimics a rudimentary Payroll processing system.
+	Input data comes from a EJB Singleton as coma separated records.
+	The Job XML has only one step.
+		ItemReader:
+			Reads list of CSV from the Singleton bean and converts each line into a
+				PayrollInputRecord. This shields the rest of the application from
+				knowing the source of the input data. By providing appropriate ItemReader
+				the rest of the application need not worry about the source of  input data.
+		ItemProcessor:
+			Processes the input data (PayrollInputRecord) and computes the social security
+				tax and net pay. It produces a PayrollOutputRecord for each processed
+				input record.
+		ItemWriter:
+			Writes / Saves the processed data into the Singleton bean itself. Different
+				ItemWriters can be written to store the processed data in a variety of
+				stores.
+	
+Summary:
+
+	We learnt about Job XML structure and packaging requirements.
+	
+	We learnt about how to write Item{Reader, Processor, Writer} for a Step.
+	
+	We learnt how to: Start and Query the Batch jobs using JobOperator APIs.
+	   

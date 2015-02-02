@@ -1,0 +1,576 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang='en'>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Java EE: XML Schemas for Java EE Deployment Descriptors</title>
+<style>
+    b {
+        color: #E40000;
+    }
+    
+    th {
+        background: #E40000;
+        color: white;
+    }
+    
+    table {
+        border-collapse: collapse;
+    }
+</style>
+</head>
+<!--stopindex-->
+<body>
+    <div id="titleSource" style="background-">
+        <IMG SRC="http://www.oracle.com/ocom/groups/public/documents/digitalasset/016091_en.gif">
+    </div>
+<a name="top"></a>
+
+<!-- BEGIN PAGETITLE -->
+<div class="smallpagetitle"><h1>Java EE: XML Schemas for Java EE Deployment Descriptors</h1></div>
+<!-- END PAGETITLE -->
+<!-- ============ -->
+<!-- MAIN CONTENT -->
+<!-- ============ -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td class="smaller" valign="top"><em>
+By <a href="mailto:bill.shannon@oracle.com">Bill Shannon</a>,
+Java EE Spec Lead, Oracle, April 30, 2013
+</em></td>
+</table>
+<div class="contentdivider"><hr /> </div>
+<p>Latest Version: <a href="http://xmlns.jcp.org/xml/ns/javaee/">http://xmlns.jcp.org/xml/ns/javaee/</a></p>
+<div><b>Contents</b></div>
+<span class="sp2">&nbsp;</span><br />
+<table border="0" cellpadding="0" cellspacing="0" class="vatop">
+<tr><td class="hyphen">-&nbsp;</td><td><a href="#0" class="named">Introduction</a></td></tr>
+<tr><td class="hyphen">-&nbsp;</td><td><a href="#1" class="named">Using Java EE Schemas </a></td></tr>
+<tr><td class="hyphen">-&nbsp;</td><td><a href="#7" class="named">Java EE 7 Schema Resources </a></td></tr>
+<tr><td class="hyphen">-&nbsp;</td><td><a href="#6" class="named">Java EE 6 Schema Resources </a></td></tr>
+<tr><td class="hyphen">-&nbsp;</td><td><a href="#5" class="named">Java EE 5 Schema Resources </a></td></tr>
+<tr><td class="hyphen">-&nbsp;</td><td><a href="#4" class="named">J2EE 1.4 XML Schemas</a></td></tr>
+<tr><td class="hyphen">-&nbsp;</td><td><a href="#3" class="named">J2EE 1.3 DTDs </a></td></tr>
+<tr><td class="hyphen">-&nbsp;</td><td><a href="#2" class="named">J2EE 1.2 DTDs</a></td></tr>
+</table>
+<span class="sp20">&nbsp;</span><br />
+<a name="0">
+<div><b>Introduction</b></div>
+</a>
+<div class="contentdivider"><hr /> </div>
+<p>
+This document lists the document formats that will be used by the
+<a href="http://www.oracle.com/technetwork/java/javaee/overview/index.html">
+Java Platform, Enterprise Edition (Java EE)</a>
+deployment descriptors described by Java EE 5 and later specifications.
+Prior to the J2EE 1.4 specifications, each Deployment Descriptor was required
+to be valid with respect to a specific DTD
+that describes the Deployment Descriptor.
+The DTDs are found in the J2EE section of
+<a href="http://java.sun.com/dtd/index.html">this document</a>.
+Starting with
+the J2EE 1.4 specification, each specification requires its Deployment
+Descriptor be validated with respect to an XML Schema that is listed in
+the <a href="http://java.sun.com/xml/ns/j2ee/index.html">J2EE 1.4 document</a>
+and this document.
+Note that deployment descriptors defined by previous
+versions of the Java EE specification must also be supported by all current
+Java EE products, and must
+continue to be validated against the corresponding DTD or schema.
+Note that not all deployment descriptors are updated for every
+release of Java EE, in which case the deployment descriptor from
+the previous version is used.
+</p>
+<p>
+The Java EE specification also requires support for the Java Persistence API.
+The Java Persistence API Schemas are available at
+<a href="http://xmlns.jcp.org/xml/ns/persistence">http://xmlns.jcp.org/xml/ns/persistence/</a>
+</p>
+<p>
+This document describes how to use the Java EE schemas
+and provides a list of XML Schemas for each
+deployment descriptor.
+</p>
+<a name="1">
+<div><b>Using Java EE Schemas</b></div>
+</a>
+<div class="contentdivider"><hr /> </div>
+<p>All Java EE 7 and newer Deployment Descriptor Schemas share the namespace
+<a href="http://xmlns.jcp.org/xml/ns/javaee/">http://xmlns.jcp.org/xml/ns/javaee/</a>.
+Each schema
+document contains a version attribute that contains the version of the
+specification. For example, the XML Schema document for the Servlet
+specification contains the version attribute value "3.1", pertaining to
+the specific version of the specification as well as the schema
+document itself.
+</p>
+<p>
+Each Java EE XML Schema document's file name contains the specific version
+of the related specification. This is introduced for convenience to
+locate specific versions of the schema documents. However, Deployment
+Descriptor instances are not required to refer to a specific file.
+Instead, an instance must specify the version of the corresponding
+specification by using the version attribute. For example, servlet
+Deployment Descriptor instances that must be processed with the
+servlet
+3.1 version must indicate the version within the version attribute of
+the instance document, for example, "3.1". The Deployment Descriptor
+processors use the version information to choose the appropriate
+version of the schema document(s) to process the Deployment Descriptor
+instances.
+</p>
+<p>
+A specific version of the Java EE specification contains a set of
+deployment descriptor schemas to constitute the Java EE Schema. The common
+definitions are contained in the <code>javaee_&lt;version&gt;.xsd</code>
+document that may be included by several Java EE Deployment Descriptor
+schemas.
+</p>
+<a name="7">
+<div><b>Java EE 7 Schema Resources </b></div>
+</a>
+<div class="contentdivider"><hr /> </div>
+<p>
+This table contains the XML Schema components for Java EE 7 schema.
+All new schemas are in the
+<a href="http://xmlns.jcp.org/xml/ns/javaee/">http://xmlns.jcp.org/xml/ns/javaee/</a>
+namespace.
+Most older schemas remain in the
+<a href="http://java.sun.com/xml/ns/javaee/">http://java.sun.com/xml/ns/javaee/</a>
+namespace.
+</p>
+<p>
+<table width="100%" border="1" cellpadding="3">
+<tbody>
+<tr>
+<th><span class="body">Date Published</span></th>
+<th><span class="body">File Name</span></th>
+<th><span class="body">Description</span></th>
+<th><span class="body">Status</span></th>
+</tr>
+<tr>
+<td><span class="body">April 30, 2013</span></td>
+<td><span class="body"><a href="application_7.xsd">application_7.xsd</a></span></td>
+<td><span class="body">Application schema</span> </td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">April 30, 2013</span></td>
+<td><span class="body"><a href="application-client_7.xsd">application-client_7.xsd</a></span></td>
+<td><span class="body">Application Client schema</span> </td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">April 30, 2013</span></td>
+<td><span class="body"><a href="batchXML_1_0.xsd">batchXML_1_0.xsd</a></span></td>
+<td><span class="body">Schema for batch.xml-based artifact loading in Java Batch</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">April 30, 2013</span></td>
+<td><span class="body"><a href="beans_1_1.xsd">beans_1_1.xsd</a></span></td>
+<td><span class="body">Contexts and Dependency Injection schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">April 30, 2013</span></td>
+<td><span class="body"><a href="connector_1_7.xsd">connector_1_7.xsd</a></span></td>
+<td><span class="body">Java EE Connector schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">April 30, 2013</span></td>
+<td><span class="body"><a href="ejb-jar_3_2.xsd">ejb-jar_3_2.xsd</a></span></td>
+<td><span class="body">Enterprise JavaBeans Deployment Descriptor Schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">April 30, 2013</span></td>
+<td><span class="body"><a href="javaee_7.xsd">javaee_7.xsd</a></span></td>
+<td><span class="body">Java EE 7 definitions file that contains common schema components</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">April 30, 2013</span></td>
+<td><span class="body"><a href="javaee_web_services_1_4.xsd">javaee_web_services_1_4.xsd</a></span></td>
+<td><span class="body">Web services schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">April 30, 2013</span></td>
+<td><span class="body"><a href="javaee_web_services_client_1_4.xsd">javaee_web_services_client_1_4.xsd</a></span></td>
+<td><span class="body">Web services client schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">April 30, 2013</span></td>
+<td><span class="body"><a href="jobXML_1_0.xsd">jobXML_1_0.xsd</a></span></td>
+<td><span class="body">Batch Job Specification Language (JSL) schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">April 30, 2013</span></td>
+<td><span class="body"><a href="jsp_2_3.xsd">jsp_2_3.xsd</a></span></td>
+<td><span class="body">JavaServer Pages Deployment Descriptor schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">April 30, 2013</span></td>
+<td><span class="body"><a href="permissions_7.xsd">permissions_7.xsd</a></span></td>
+<td><span class="body">Java EE application permissions schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">April 30, 2013</span></td>
+<td><span class="body"><a href="web-app_3_1.xsd">web-app_3_1.xsd</a></span></td>
+<td><span class="body">Web Application Deployment Descriptor schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">April 30, 2013</span></td>
+<td><span class="body"><a href="web-common_3_1.xsd">web-common_3_1.xsd</a></span></td>
+<td><span class="body">Web Application Deployment Descriptor common definitions schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">April 30, 2013</span></td>
+<td><span class="body"><a href="web-fragment_3_1.xsd">web-fragment_3_1.xsd</a></span></td>
+<td><span class="body">Web Application Deployment Descriptor fragment schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">April 30, 2013</span></td>
+<td><span class="body"><a href="web-facelettaglibrary_2_2.xsd">web-facelettaglibrary_2_2.xsd</a></span></td>
+<td><span class="body">JavaServer Faces Facelet Tag Library schema</span>
+</td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">April 30, 2013</span></td>
+<td><span class="body"><a href="web-facesconfig_2_2.xsd">web-facesconfig_2_2.xsd</a></span></td>
+<td><span class="body">JavaServer Faces Application Configuration File schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">April 30, 2013</span></td>
+<td><span class="body"><a href="web-partialresponse_2_2.xsd">web-partialresponse_2_2.xsd</a></span></td>
+<td><span class="body">JavaServer Faces partial response schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">July 1, 2009</span></td>
+<td><span class="body"><a href="web-facesuicomponent_2_0.xsd">web-facesuicomponent_2_0.xsd</a></span></td>
+<td><span class="body">JavaServer Faces UI Component Configuration schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">December 10, 2009</span></td>
+<td><span class="body"><a href="web-jsptaglibrary_2_1.xsd">web-jsptaglibrary_2_1.xsd</a></span></td>
+<td><span class="body">JSP Taglibrary Deployment Descriptor schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">November 21, 2007</span></td>
+<td><span class="body"><a href="javaee_web_services_metadata_handler_2_0.xsd">javaee_web_services_metadata_handler_2_0.xsd</a></span></td>
+<td><span class="body">Web services schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">-</span></td>
+<td><span class="body"><a href="http://www.w3.org/2001/xml.xsd">http://www.w3.org/2001/xml.xsd</a></span></td>
+<td><span class="body">The Java EE schemas use some common definitions provided and published by W3C</span></td>
+<td><span class="body">-</span></td>
+</tr>
+</table>
+</p>
+<br>
+<br>
+<a name="6">
+<div><b>Java EE 6 Schema Resources </b></div>
+</a>
+<div class="contentdivider"><hr /> </div>
+<p>
+This table contains the XML Schema components for Java EE 6 schema.
+All of these schemas are in the
+<a href="http://java.sun.com/xml/ns/javaee">http://java.sun.com/xml/ns/javaee</a>
+namespace.
+</p>
+</span>
+<p>
+<table width="100%" border="1" cellpadding="3">
+<tbody>
+<tr>
+<th><span class="body">Date Published</span></th>
+<th><span class="body">File Name</span></th>
+<th><span class="body">Description</span></th>
+<th><span class="body">Status</span></th>
+</tr>
+<tr>
+<td><span class="body">December 10, 2009</span></td>
+<td><span class="body"><a href="application_6.xsd">application_6.xsd</a></span></td>
+<td><span class="body">Application schema</span>
+</td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">December 10, 2009</span></td>
+<td><span class="body"><a
+href="application-client_6.xsd">application-client_6.xsd</a></span></td>
+<td><span class="body">Application Client schema</span>
+</td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">December 10, 2009</span></td>
+<td><span class="body"><a
+href="beans_1_0.xsd">beans_1_0.xsd</a></span></td>
+<td><span class="body">Contexts and Dependency Injection schema</span>
+</td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">December 10, 2009</span></td>
+<td><span class="body"><a
+href="connector_1_6.xsd">connector_1_6.xsd</a></span></td>
+<td><span class="body">Java EE Connector schema</span>
+</td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">December 10, 2009</span></td>
+<td><span class="body"><a href="ejb-jar_3_1.xsd">ejb-jar_3_1.xsd</a></span></td><td><span class="body">Enterprise JavaBeans Deployment Descriptor
+Schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">December 10, 2009</span></td>
+<td><span class="body"><a href="javaee_6.xsd">javaee_6.xsd</a></span></td>
+<td><span class="body">Java EE 6 definitions file that
+contains common schema components</span>
+</td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">December 10, 2009</span></td>
+<td><span class="body"><a
+href="javaee_web_services_1_3.xsd">javaee_web_services_1_3.xsd</a></span></td>
+<td><span class="body">Web services schema</span>
+</td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">December 10, 2009</span></td>
+<td><span class="body"><a
+href="javaee_web_services_client_1_3.xsd">javaee_web_services_client_1_3.xsd</a></span></td>
+<td><span class="body">Web services client schema</span>
+</td>
+<td><span class="body">Final Release</span></td>
+<tr>
+<td><span class="body">December 10, 2009</span></td>
+<td><span class="body"><a href="jsp_2_2.xsd">jsp_2_2.xsd</a></span></td>
+<td><span class="body">JavaServer Pages Deployment Descriptor schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">December 10, 2009</span></td>
+<td><span class="body"><a href="web-app_3_0.xsd">web-app_3_0.xsd</a></span></td>
+<td><span class="body">Web Application Deployment Descriptor schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">December 10, 2009</span></td>
+<td><span class="body"><a href="web-common_3_0.xsd">web-common_3_0.xsd</a></span></td>
+<td><span class="body">Web Application Deployment Descriptor common definitions schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">December 10, 2009</span></td>
+<td><span class="body"><a href="web-fragment_3_0.xsd">web-fragment_3_0.xsd</a></span></td>
+<td><span class="body">Web Application Deployment Descriptor fragment schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">July 1, 2009</span></td>
+<td><span class="body"><a href="web-facelettaglibrary_2_0.xsd">web-facelettaglibrary_2_0.xsd</a></span></td>
+<td><span class="body">JavaServer Faces Facelet Tag Library schema</span>
+</td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">July 1, 2009</span></td>
+<td><span class="body"><a href="web-facesconfig_2_0.xsd">web-facesconfig_2_0.xsd</a></span></td>
+<td><span class="body">JavaServer Faces Application Configuration File schema</span>
+</td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">July 1, 2009</span></td>
+<td><span class="body"><a href="web-facesuicomponent_2_0.xsd">web-facesuicomponent_2_0.xsd</a></span></td>
+<td><span class="body">JavaServer Faces UI Component Configuration schema</span>
+</td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">July 1, 2009</span></td>
+<td><span class="body"><a href="web-partialresponse_2_0.xsd">web-partialresponse_2_0.xsd</a></span></td>
+<td><span class="body">JavaServer Faces partial response schema</span>
+</td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">December 10, 2009</span></td>
+<td><span class="body"><a
+href="web-jsptaglibrary_2_1.xsd">web-jsptaglibrary_2_1.xsd</a></span></td>
+<td><span class="body">JSP Taglibrary Deployment Descriptor schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">November 21, 2007</span></td>
+<td><span class="body"><a
+href="javaee_web_services_metadata_handler_2_0.xsd">javaee_web_services_metadata_handler_2_0.xsd</a></span></td>
+<td><span class="body">Web services schema</span>
+</td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">-</span></td>
+<td><span class="body"><a href="http://www.w3.org/2001/xml.xsd">http://www.w3.org/2001/xml.xsd</a></span></td>
+<td><span class="body">The Java EE schemas use some
+common definitions provided and published by W3C</span>
+</td>
+<td><span class="body">-</span></td>
+</tr>
+</table>
+</p>
+<br>
+<br>
+<a name="5">
+<div><b>Java EE 5 Schema Resources </b></div>
+</a>
+<div class="contentdivider"><hr /> </div>
+<p>
+This table contains the XML Schema components for Java EE 5 schema.
+All of these schemas are in the
+<a href="http://java.sun.com/xml/ns/javaee">http://java.sun.com/xml/ns/javaee</a>
+namespace.
+</p>
+</span>
+<p>
+<table width="100%" border="1" cellpadding="3">
+<tbody>
+<tr>
+<th><span class="body">Date Published</span></th>
+<th><span class="body">File Name</span></th>
+<th><span class="body">Description</span></th>
+<th><span class="body">Status</span></th>
+</tr>
+<tr>
+<td><span class="body">May 2, 2006</span></td>
+<td><span class="body"><a href="application_5.xsd">application_5.xsd</a></span></td>
+<td><span class="body">Application schema</span>
+</td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">May 2, 2006</span></td>
+<td><span class="body"><a
+href="application-client_5.xsd">application-client_5.xsd</a></span></td>
+<td><span class="body">Application Client schema</span>
+</td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">May 2, 2006</span></td>
+<td><span class="body"><a href="ejb-jar_3_0.xsd">ejb-jar_3_0.xsd</a></span></td><td><span class="body">Enterprise JavaBeans Deployment Descriptor
+Schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">May 2, 2006</span></td>
+<td><span class="body"><a href="javaee_5.xsd">javaee_5.xsd</a></span></td>
+<td><span class="body">Java EE 5 definitions file that
+contains common schema components</span>
+</td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">May 2, 2006</span></td>
+<td><span class="body"><a
+href="javaee_web_services_1_2.xsd">javaee_web_services_1_2.xsd</a></span></td>
+<td><span class="body">Web services schema</span>
+</td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">May 2, 2006</span></td>
+<td><span class="body"><a
+href="javaee_web_services_client_1_2.xsd">javaee_web_services_client_1_2.xsd</a></span></td>
+<td><span class="body">Web services client schema</span>
+</td>
+<td><span class="body">Final Release</span></td>
+<tr>
+<td><span class="body">May 2, 2006</span></td>
+<td><span class="body"><a href="jsp_2_1.xsd">jsp_2_1.xsd</a></span></td>
+<td><span class="body">JavaServer Pages Deployment Descriptor
+Schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">May 2, 2006</span></td>
+<td><span class="body"><a href="web-app_2_5.xsd">web-app_2_5.xsd</a></span></td><td><span class="body">Servlet Deployment Descriptor Schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">July 1, 2008</span></td>
+<td><span class="body"><a href="web-facesconfig_1_2.xsd">web-facesconfig_1_2.xsd</a></span></td>
+<td><span class="body">JavaServer Faces Application Configuration File schema</span>
+</td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">May 2, 2006</span></td>
+<td><span class="body"><a
+href="web-jsptaglibrary_2_1.xsd">web-jsptaglibrary_2_1.xsd</a></span></td>
+<td><span class="body">JSP Taglibrary Deployment Descriptor Schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">November 21, 2007</span></td>
+<td><span class="body"><a
+href="javaee_web_services_metadata_handler_2_0.xsd">javaee_web_services_metadata_handler_2_0.xsd</a></span></td>
+<td><span class="body">Java EE Web Services Metadata Handler Chain Schema</span></td>
+<td><span class="body">Final Release</span></td>
+</tr>
+<tr>
+<td><span class="body">-</span></td>
+<td><span class="body"><a href="http://www.w3.org/2001/xml.xsd">http://www.w3.org/2001/xml.xsd</a></span></td>
+<td><span class="body">The Java EE schemas use some
+common definitions provided and published by W3C</span>
+</td>
+<td><span class="body">-</span></td>
+</tr>
+</table>
+</p>
+<br>
+<br>
+<a name="4">
+<div><b>J2EE 1.4 XML Schemas</b></div>
+</a>
+<div class="contentdivider"><hr /> </div>
+<p>XML Schemas specified by the J2EE 1.4 specification are
+available at <a href="http://java.sun.com/xml/ns/j2ee/">http://java.sun.com/xml/ns/j2ee/</a>.</p>
+<a name="3">
+<div><b>J2EE 1.3 DTDs </b></div>
+</a>
+<div class="contentdivider"><hr /> </div>
+<p>DTDs specified by the J2EE 1.3 specification are
+available at <a href="http://java.sun.com/dtd/">http://java.sun.com/dtd/</a>.</p>
+<a name="2">
+<div><b>J2EE 1.2 DTDs</b></div>
+</a>
+<div class="contentdivider"><hr /> </div>
+<p>DTDs specified by the J2EE 1.2 specification are
+available at <a href="http://java.sun.com/j2ee/dtds/">http://java.sun.com/j2ee/dtds/</a>.</p>
+<!-- =================== -->
+<!-- END OF MAIN CONTENT -->
+<!-- =================== -->
+</body>
+</html>
