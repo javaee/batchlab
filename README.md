@@ -7,4 +7,4 @@ It starts with introducing the core concepts of JSR 352 (Job, Chunk, etc.) and t
 
 This Lab has been tested on GlassFish 4.0 & 4.1 but should work on any Java EE 7 compatible application server (full platform).
 
-To get started, download the project and check [https://github.com/java-ee/BatchLab/blob/master/masterLab.html]
+To get started, download the project and check the masterLab.html file (generated from the .adoc files).
