@@ -1,0 +1,14 @@
+theme: jekyll-theme-architect
+
+title: [Project Name]
+# ex. "GlassFish"
+description: [Tag Line]
+# ex. "Java EE Reference Implementation"
+
+links:
+  download: https://download_url/
+  source: https://repo_url/
+  docs: https://docs_url/
+  #javadocs: https://javadoc_url/
+  #faq: https://faq_url
+  mailinglist: https://faq_url/
