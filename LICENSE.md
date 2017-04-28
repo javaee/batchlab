@@ -1,3 +1,6 @@
+---
+---
+
 # COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.1
 
 1. Definitions.
