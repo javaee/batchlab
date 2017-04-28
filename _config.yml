@@ -1,14 +1,12 @@
 theme: jekyll-theme-architect
 
-title: [Project Name]
-# ex. "GlassFish"
-description: [Tag Line]
-# ex. "Java EE Reference Implementation"
+title: [Batch Lab]
+description: [JSR352 Hands-on Lab]
 
 links:
-  download: https://download_url/
-  source: https://repo_url/
-  docs: https://docs_url/
+  #download: https://download_url/
+  source: https://github.com/javaee/batchlab
+  #docs: https://docs_url/
   #javadocs: https://javadoc_url/
   #faq: https://faq_url
-  mailinglist: https://faq_url/
+  #mailinglist: https://faq_url/
