@@ -3,59 +3,59 @@
 
 # COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.1
 
-1. Definitions.
+1. Definitions.  
 
     1.1. "Contributor" means each individual or entity that creates or
-    contributes to the creation of Modifications.
+    contributes to the creation of Modifications.  
 
     1.2. "Contributor Version" means the combination of the Original
     Software, prior Modifications used by a Contributor (if any), and
-    the Modifications made by that particular Contributor.
+    the Modifications made by that particular Contributor.  
 
     1.3. "Covered Software" means (a) the Original Software, or (b)
     Modifications, or (c) the combination of files containing Original
     Software with files containing Modifications, in each case including
-    portions thereof.
+    portions thereof.  
 
     1.4. "Executable" means the Covered Software in any form other than
-    Source Code.
+    Source Code.  
 
     1.5. "Initial Developer" means the individual or entity that first
-    makes Original Software available under this License.
+    makes Original Software available under this License.  
 
     1.6. "Larger Work" means a work which combines Covered Software or
-    portions thereof with code not governed by the terms of this License.
+    portions thereof with code not governed by the terms of this License.  
 
-    1.7. "License" means this document.
+    1.7. "License" means this document.  
 
     1.8. "Licensable" means having the right to grant, to the maximum
     extent possible, whether at the time of the initial grant or
-    subsequently acquired, any and all of the rights conveyed herein.
+    subsequently acquired, any and all of the rights conveyed herein.  
 
     1.9. "Modifications" means the Source Code and Executable form of
-    any of the following:
+    any of the following:  
 
     A. Any file that results from an addition to, deletion from or
     modification of the contents of a file containing Original Software
-    or previous Modifications;
+    or previous Modifications;  
 
     B. Any new file that contains any part of the Original Software or
-    previous Modification; or
+    previous Modification; or  
 
     C. Any new file that is contributed or otherwise made available
-    under the terms of this License.
+    under the terms of this License.  
 
     1.10. "Original Software" means the Source Code and Executable form
     of computer software code that is originally released under this
-    License.
+    License.  
 
     1.11. "Patent Claims" means any patent claim(s), now owned or
     hereafter acquired, including without limitation, method, process,
-    and apparatus claims, in any patent Licensable by grantor.
+    and apparatus claims, in any patent Licensable by grantor.  
 
     1.12. "Source Code" means (a) the common form of computer software
     code in which modifications are made and (b) associated
-    documentation included in or with such code.
+    documentation included in or with such code.  
 
     1.13. "You" (or "Your") means an individual or a legal entity
     exercising rights under, and complying with all of the terms of,
@@ -65,7 +65,7 @@
     or indirect, to cause the direction or management of such entity,
     whether by contract or otherwise, or (b) ownership of more than
     fifty percent (50%) of the outstanding shares or beneficial
-    ownership of such entity.
+    ownership of such entity.  
 
 2. License Grants.
 
