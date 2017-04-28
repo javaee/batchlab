@@ -1,7 +1,3 @@
----
-
----
-
 # COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.1
 
 1. Definitions.
@@ -355,7 +351,8 @@
 
 ------------------------------------------------------------------------
 
-NOTICE PURSUANT TO SECTION 9 OF THE COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL)
+NOTICE PURSUANT TO SECTION 9 OF THE COMMON DEVELOPMENT AND DISTRIBUTION
+LICENSE (CDDL)
 
 The code released under the CDDL shall be governed by the laws of the
 State of California (excluding conflict-of-law provisions). Any
@@ -366,11 +363,11 @@ County, California.
 
 
 
-# The GNU General Public License (GPL) Version 2, June 1991
+#  The GNU General Public License (GPL) Version 2, June 1991
 
-Copyright (C) 1989, 1991 Free Software Foundation, Inc.
-51 Franklin Street, Fifth Floor
-Boston, MA 02110-1335
+Copyright (C) 1989, 1991 Free Software Foundation, Inc.  
+51 Franklin Street, Fifth Floor  
+Boston, MA 02110-1335  
 USA
 
 Everyone is permitted to copy and distribute verbatim copies
@@ -703,7 +700,7 @@ may consider it more useful to permit linking proprietary applications
 with the library. If this is what you want to do, use the GNU Library
 General Public License instead of this License.
 
-#
+---
 
 Certain source files distributed by Oracle America, Inc. and/or its
 affiliates are subject to the following clarification and special
@@ -743,7 +740,7 @@ Exception or making modifications to this package which may
 subsequently be redistributed and/or involve the use of third party
 software.
 
-CLASSPATH EXCEPTION
+# CLASSPATH EXCEPTION
 Linking this library statically or dynamically with other modules is
 making a combined work based on this library.  Thus, the terms and
 conditions of the GNU General Public License version 2 cover the whole
