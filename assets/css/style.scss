@@ -209,6 +209,15 @@ ul {
   text-align: center;
 }
 
+.oracle {
+  color: #666;
+}
+
+.oracle:hover { 
+  text-decoration: none;
+  color: #FF0000;
+}
+
 .fullpage {
   //float: center;
   color: FF0000;
