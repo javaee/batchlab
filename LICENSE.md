@@ -2,8 +2,8 @@
 
 1. Definitions.
 
-      1.1. "Contributor" means each individual or entity that creates or
-      contributes to the creation of Modifications.
+    1.1. "Contributor" means each individual or entity that creates or
+    contributes to the creation of Modifications.
 
     1.2. "Contributor Version" means the combination of the Original
     Software, prior Modifications used by a Contributor (if any), and
